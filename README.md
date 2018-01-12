@@ -6,6 +6,15 @@ HTTP/2 Server Push with Node.js
 
 - Node.js >= 8.4.0
 
+### Important
+You need generate your `cert` and `key`
+
+```shell
+$ openssl req -new -newkey rsa:2048 -new -nodes -keyout key.pem -out csr.pem
+
+$ openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out server.crt
+```
+
 ## Run
 
 ```javascript
